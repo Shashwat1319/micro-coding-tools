@@ -52,5 +52,5 @@ toggleBtn.addEventListener("click",()=>{
 // ===== SHARE BUTTON =====
 function shareSite(){
   if(navigator.share){ navigator.share({ title:document.title, url:window.location.href }); }
-  else{ navigator.clipboard.writeText(window.location.href); alert("Link copied!"); }
+  else{ navigator.clipboard.writeText(window.location.href); }
 }
