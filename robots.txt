@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://shashwat1319.github.io/micro-coding-tools/sitemap.xml
