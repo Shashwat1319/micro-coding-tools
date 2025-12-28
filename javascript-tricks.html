@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Tricks & Tips</title>
+  <meta name="description" content="Essential JavaScript tricks, tips & mini examples for students. Learn, practice & improve your JS skills fast">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Sticky nav -->
+  <nav class="top-nav">
+    <a href="/">Home</a>
+    <a href="/python-cheatsheet.html">Python Cheatsheet</a>
+    <a href="/javascript-tricks.html">JS Tricks</a>
+    <a href="/git-commands.html">Git Commands</a>
+    <a href="/css-snippets.html">CSS Snippets</a>
+    <a href="/mini-quiz.html">Mini Quiz</a>
+  </nav>
+
+  <header>
+    <h1>JavaScript Mini Tricks & Snippets</h1>
+    <p>Quick JS tips, tricks & mini challenges. Copy & practice easily!</p>
+    <!-- Dark Mode Toggle -->
+    <button id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+  </header>
+
+  <section id="snippets-section">
+    <h2>Variables & Constants</h2>
+    <ul id="snippets-list">
+      <li>
+        <span>Declare variable: <code>let x = 5;</code></span>
+        <button class="copy-btn" onclick="copyText('let x = 5;')">Copy</button>
+      </li>
+      <li>
+        <span>Constant: <code>const PI = 3.14;</code></span>
+        <button class="copy-btn" onclick="copyText('const PI = 3.14;')">Copy</button>
+      </li>
+    </ul>
+
+    <h2>Functions & Arrow Functions</h2>
+    <ul>
+      <li>
+        <span>Normal function: <code>function greet(name){ return 'Hello '+name; }</code></span>
+        <button class="copy-btn" onclick="copyText('function greet(name){ return \'Hello \'+name; }')">Copy</button>
+      </li>
+      <li>
+        <span>Arrow function: <code>const square = x => x*x;</code></span>
+        <button class="copy-btn" onclick="copyText('const square = x => x*x;')">Copy</button>
+      </li>
+    </ul>
+
+    <h2>Array Tricks</h2>
+    <ul>
+      <li>
+        <span>Reverse array: <code>arr.reverse()</code></span>
+        <button class="copy-btn" onclick="copyText('arr.reverse()')">Copy</button>
+      </li>
+      <li>
+        <span>Filter array: <code>arr.filter(x => x>5)</code></span>
+        <button class="copy-btn" onclick="copyText('arr.filter(x => x>5)')">Copy</button>
+      </li>
+      <li>
+        <span>Map array: <code>arr.map(x => x*2)</code></span>
+        <button class="copy-btn" onclick="copyText('arr.map(x => x*2)')">Copy</button>
+      </li>
+    </ul>
+
+    <h2>DOM Manipulation</h2>
+    <ul>
+      <li>
+        <span>Get element: <code>document.getElementById('id')</code></span>
+        <button class="copy-btn" onclick="copyText('document.getElementById(\'id\')')">Copy</button>
+      </li>
+      <li>
+        <span>Change text: <code>element.textContent = 'Hello'</code></span>
+        <button class="copy-btn" onclick="copyText('element.textContent = ' + String.fromCharCode(39) + 'Hello' + String.fromCharCode(39))">Copy</button>
+      </li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>Share & support: <a href="#">Buy me a coffee</a></p>
+  </footer>
+
+  <script>
+    // Copy function
+    function copyText(text) {
+      navigator.clipboard.writeText(text);
+      alert("Copied: " + text);
+    }
+
+    // Dark mode toggle
+    const toggleBtn = document.getElementById("themeToggle");
+    if(localStorage.getItem("theme")==="dark"){ 
+      document.body.classList.add("dark"); 
+      toggleBtn.textContent="☀️"; 
+    }
+    toggleBtn.addEventListener("click",()=>{
+      document.body.classList.toggle("dark");
+      const isDark=document.body.classList.contains("dark");
+      toggleBtn.textContent=isDark?"☀️":"🌙";
+      localStorage.setItem("theme", isDark?"dark":"light");
+    });
+  </script>
+</body>
+</html>

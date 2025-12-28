@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Python Cheatsheet for Beginners</title>
+  <meta name="description" content="Quick Python snippets, examples & mini challenges for beginners. Copy, practice, and master Python efficiently.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Sticky nav -->
+  <nav class="top-nav">
+    <a href="/index.html">Home</a>
+    <a href="/python-cheatsheet.html">Python Cheatsheet</a>
+    <a href="/javascript-tricks.html">JS Tricks</a>
+    <a href="/git-commands.html">Git Commands</a>
+    <a href="/css-snippets.html">CSS Snippets</a>
+    <a href="/mini-quiz.html">Mini Quiz</a>
+  </nav>
+
+  <header>
+    <h1>Python Cheatsheet for Beginners</h1>
+    <p>Quick Python snippets & mini challenges for students. Copy & practice easily!</p>
+
+    <!-- Dark Mode Toggle -->
+    <button id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+  </header>
+
+  <section id="snippets-section">
+    <h2>Variables</h2>
+    <ul id="snippets-list">
+      <li>
+        <span>Assign variable: <code>x = 10</code></span>
+        <button class="copy-btn" onclick="copyText('x = 10')">Copy</button>
+      </li>
+      <li>
+        <span>Multiple assignment: <code>a, b = 5, 10</code></span>
+        <button class="copy-btn" onclick="copyText('a, b = 5, 10')">Copy</button>
+      </li>
+    </ul>
+
+    <h2>Loops</h2>
+    <ul>
+      <li>
+        <span>For loop: <code>for i in range(5):<br> &nbsp;&nbsp;print(i)</code></span>
+        <button class="copy-btn" onclick="copyText('for i in range(5):\n  print(i)')">Copy</button>
+      </li>
+      <li>
+        <span>While loop: 
+          <pre><code>i = 0
+while i < 5:
+  print(i)
+  i += 1
+</code></pre>
+        </span>
+        <button class="copy-btn" onclick="copyText('i = 0\nwhile i < 5:\n  print(i)\n  i += 1')">Copy</button>
+      </li>
+    </ul>
+
+    <h2>Functions</h2>
+    <ul>
+      <li>
+        <span>Simple function: <code>def greet(name):<br> &nbsp;&nbsp;return "Hello "+name</code></span>
+        <button class="copy-btn" onclick="copyText('def greet(name): return &quot;Hello &quot;+name')">Copy</button>
+        </li>
+      <li>
+        <span>Lambda function: <code>square = lambda x: x*x</code></span>
+        <button class="copy-btn" onclick="copyText('square = lambda x: x*x')">Copy</button>
+      </li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>Share & support: <a href="#">Buy me a coffee</a></p>
+  </footer>
+
+  <script>
+    // Copy function
+    function copyText(text) {
+      navigator.clipboard.writeText(text);
+      alert("Copied: " + text);
+    }
+
+    // Dark mode toggle
+    const toggleBtn = document.getElementById("themeToggle");
+    if(localStorage.getItem("theme")==="dark"){ 
+      document.body.classList.add("dark"); 
+      toggleBtn.textContent="☀️"; 
+    }
+    toggleBtn.addEventListener("click",()=>{
+      document.body.classList.toggle("dark");
+      const isDark=document.body.classList.contains("dark");
+      toggleBtn.textContent=isDark?"☀️":"🌙";
+      localStorage.setItem("theme", isDark?"dark":"light");
+    });
+  </script>
+</body>
+</html>

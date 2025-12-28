@@ -1,0 +1,7 @@
+[
+  {"title": "Python: Reverse String", "code": "s[::-1]"},
+  {"title": "JS: Toggle Dark Mode", "code": "document.body.classList.toggle('dark');"},
+  {"title": "HTML: Open Link in New Tab", "code": "<a href='url' target='_blank'>Link</a>"},
+  {"title": "CSS: Center Div Horizontally", "code": "margin: 0 auto; width: 50%;"},
+  {"title": "Python: List Comprehension Example", "code": "[x*2 for x in list_of_numbers]"}
+]

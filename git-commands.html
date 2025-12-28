@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Essential Git Commands for Beginners</title>
+  <meta name="description" content="Essential Git commands for beginners. Copy, practice & manage your code efficiently with this quick reference.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Sticky nav -->
+  <nav class="top-nav">
+    <a href="/">Home</a>
+    <a href="/python-cheatsheet.html">Python Cheatsheet</a>
+    <a href="/javascript-tricks.html">JS Tricks</a>
+    <a href="/git-commands.html">Git Commands</a>
+    <a href="/css-snippets">CSS Snippets</a>
+    <a href="/mini-quiz.html">Mini Quiz</a>
+  </nav>
+
+  <header>
+    <h1>Essential Git Commands for Beginners</h1>
+    <p>Essential Git commands for students & developers. Copy & practice easily!</p>
+    <!-- Dark Mode Toggle -->
+    <button id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+  </header>
+
+  <section id="snippets-section">
+    <h2>Basic Commands</h2>
+    <ul id="snippets-list">
+      <li>
+        <span>Initialize repo: <code>git init</code></span>
+        <button class="copy-btn" onclick="copyText('git init')">Copy</button>
+      </li>
+      <li>
+        <span>Check status: <code>git status</code></span>
+        <button class="copy-btn" onclick="copyText('git status')">Copy</button>
+      </li>
+      <li>
+        <span>Add files: <code>git add .</code></span>
+        <button class="copy-btn" onclick="copyText('git add .')">Copy</button>
+      </li>
+      <li>
+        <span>Commit changes: <code>git commit -m "message"</code></span>
+        <button class="copy-btn" onclick='copyText("git commit -m \"message\"")'>Copy</button>
+      </li>
+    </ul>
+
+    <h2>Branching</h2>
+    <ul>
+      <li>
+        <span>Create branch: <code>git branch new-branch</code></span>
+        <button class="copy-btn" onclick="copyText('git branch new-branch')">Copy</button>
+      </li>
+      <li>
+        <span>Switch branch: <code>git checkout branch-name</code></span>
+        <button class="copy-btn" onclick="copyText('git checkout branch-name')">Copy</button>
+      </li>
+      <li>
+        <span>Merge branch: <code>git merge branch-name</code></span>
+        <button class="copy-btn" onclick="copyText('git merge branch-name')">Copy</button>
+      </li>
+    </ul>
+
+    <h2>Remote Repos</h2>
+    <ul>
+      <li>
+        <span>Add remote: <code>git remote add origin URL</code></span>
+        <button class="copy-btn" onclick="copyText('git remote add origin URL')">Copy</button>
+      </li>
+      <li>
+        <span>Push to remote: <code>git push -u origin main</code></span>
+        <button class="copy-btn" onclick="copyText('git push -u origin main')">Copy</button>
+      </li>
+      <li>
+        <span>Pull from remote: <code>git pull origin main</code></span>
+        <button class="copy-btn" onclick="copyText('git pull origin main')">Copy</button>
+      </li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>Share & support: <a href="#">Buy me a coffee</a></p>
+  </footer>
+
+  <script>
+    // Copy function
+    function copyText(text) {
+      navigator.clipboard.writeText(text);
+      alert("Copied: " + text);
+    }
+
+    // Dark mode toggle
+    const toggleBtn = document.getElementById("themeToggle");
+    if(localStorage.getItem("theme")==="dark"){ 
+      document.body.classList.add("dark"); 
+      toggleBtn.textContent="☀️"; 
+    }
+    toggleBtn.addEventListener("click",()=>{
+      document.body.classList.toggle("dark");
+      const isDark=document.body.classList.contains("dark");
+      toggleBtn.textContent=isDark?"☀️":"🌙";
+      localStorage.setItem("theme", isDark?"dark":"light");
+    });
+  </script>
+</body>
+</html>
